@@ -1,20 +1,29 @@
 <template>
   <div>
-    <Nuxt />
+    <Header />
+    <main>
+      <Nuxt />
+    </main>
+    <Footer />
   </div>
 </template>
+
+<script>
+  import Header from "@/components/Header.vue"; // headerをインポート
+	import Footer from "@/components/Footer.vue"; // footerをインポート
+	export default {
+		components: {
+			Header,
+			Footer
+		}
+	};
+</script>
 
 <style>
 html {
   font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+    'Montserrat',
+    'Noto Sans JP';
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -58,5 +67,21 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+main {
+    min-height: 600px;
+    margin: 0 auto;
+		background-color: #fff;
+  }
+  
+h1 {
+  font-size: 80px;
+}
+h2 {
+  font-size: 48px;
+}
+h3 {
+  font-size: 24px;
 }
 </style>
