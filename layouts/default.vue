@@ -24,7 +24,6 @@ html {
   font-family:
     'Montserrat',
     'Noto Sans JP';
-  font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -72,16 +71,43 @@ html {
 main {
     min-height: 600px;
     margin: 0 auto;
-		background-color: #fff;
+    background-color: #fff;
+    font-size: 1.6rem;
   }
   
 h1 {
-  font-size: 80px;
+  font-size: 8rem;
 }
 h2 {
-  font-size: 48px;
+  font-size: 4.8rem;
 }
 h3 {
-  font-size: 24px;
+  font-size: 2.4rem;
+}
+p {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 1025px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 50%;
+    }
+}
+@media screen and (max-width: 770px) {
+    html {
+        font-size: 45%;
+    }
+}
+@media screen and (max-width: 425px) {
+    html {
+        font-size: 40%;
+    }
 }
 </style>

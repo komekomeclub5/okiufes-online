@@ -44,7 +44,7 @@ export default {
 
   webfontloader: {
     google: {
-      families: ['Montserrat:500,600,900', 'Noto+Sans+JP:500,600,900'] 
+      families: ['Montserrat:500,600,800', 'Noto+Sans+JP:500,600,800'] 
     }
   },
 

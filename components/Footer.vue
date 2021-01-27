@@ -1,4 +1,5 @@
 <template>
+<!-- Footer -->
     <footer>
         <div class="container footer-con">
             <div class="row">
@@ -52,12 +53,15 @@
 <style>
 footer {
     color: #FFF; 
-    background-color: #000;
+    background-color: #000; 
+    /*color: #000;
+    background-color: #FFF;*/
     padding: 0;
+    font-size: 1.6rem;
 }
 
 .footer-con {
-    padding: 3% 0;
+    padding: 5% 0;
 }
 
 .top-left h3 {
@@ -75,12 +79,6 @@ footer {
     object-fit: cover;
 }
 
-
-.footer-mid {
-    margin: 0 auto;
-    display: table;
-    overflow: hidden;
-}
 .mid-list {
     display: table-cell;
     width: 30%;
@@ -99,14 +97,15 @@ footer {
 .mid-list dd {
     text-align: left;
     margin-inline-start: 0px;
+    padding: 2px 0;
 }
 
 .footer-bottom {
-    padding: 1%;
+    padding: 10% 0 0 0;
     text-align: right;
 }
 
-@media screen and (min-width:800px) { 
+@media screen and (min-width:1200px) { 
     .mid-list {
         display: table-cell;
         width: 30%;
@@ -114,15 +113,17 @@ footer {
     }   
 }
 
-@media screen and (min-width:1200px) { 
-    .footer-mid {
-        width: 40%;
+@media screen and (max-width: 575px) {
+    .footer-con {
+        padding: 3% 1%;
     }
-    .mid-list {
-        display: table-cell;
-        width: 30%;
-        margin: 0;
-    }   
+    .snslogo img{
+        width: 54px;/*幅*/
+        float: left;
+        margin: 5% 1%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }
 
 
