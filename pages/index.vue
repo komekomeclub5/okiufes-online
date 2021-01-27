@@ -5,14 +5,20 @@
     <div class="top-visual">
       <div class="gradient">
         <div class="container">
-          <div class="row">
-              <div class="col-sm left">
+          <div class="row pd">
+            <div class="col-sm left">
               <p class="special">特別イベント</p>
               <h1>学生生活<br>発表会</h1>
               <p>今のこの時だからこそできることがある。<br>さあ立ち上がろう</p>
             </div>
             <div class="col-sm">
-              <img class="topimg" src="/top/top.png" />
+      
+              <div class="top-background">
+                <div v-for="(item, index) in $store.getters['imgmodule/itemsList']" :key="index">
+                  <img :src='item.src' :class="item.class" :style='item.style'>
+                </div>
+                
+              </div>
             </div>
           </div>
         </div>
@@ -35,7 +41,12 @@
                 </p>
               </div>
               <div class="col-sm">
-                <img class="aboutimg" src="/top/about.png" />
+                <!-- <img class="aboutimg" src="/top/about.png" /> -->
+                <div class="ct-background">
+                  <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
+                    <img :src='item1.src' :class="item1.class" :style='item1.style'>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -52,21 +63,21 @@
             <p>
               フォローしたり、コメントしたり、LIVEを見たり自分だけの楽しみ方を見つける。新しい楽しみ方もここで。
             </p>
-            <Nuxtlink to="/" class="enjoy-more">もっとみる</Nuxtlink>
+            <Nuxtlink @click="$router.push('/')" class="enjoy-more">もっとみる</Nuxtlink>
           </div>
           <div class="col-sm">
             <h3>団体を知る</h3>
             <p>
               あなたが気になる出演団体について知ることができればきっと楽しさ倍増！？お気に入りの団体も見つかるかも
             </p>
-            <Nuxtlink to="/" class="enjoy-more">もっとみる</Nuxtlink>
+            <Nuxtlink @click="$router.push('/')" class="enjoy-more">もっとみる</Nuxtlink>
           </div>
           <div class="col-sm">
             <h3>感染対策の徹底</h3>
             <p>
               多くの人に楽しんでいただくために新しい生活様式を取り入れ、感染対策にも取り組んでいます。
             </p>
-            <Nuxtlink to="/" class="enjoy-more">もっとみる</Nuxtlink>
+            <Nuxtlink @click="$router.push('/')" class="enjoy-more">もっとみる</Nuxtlink>
           </div>
         </div>
       </div>
@@ -78,12 +89,12 @@
 </template>
 
 
-<script>
-
-</script>
 
 <style>
 /* top */
+.pd {
+  padding: 6% 0;
+}
 .top-visual {
   display: block;
   width: 100%;
@@ -131,6 +142,56 @@
   padding: 15% 2% 15% 20%;
 }
 
+/* top img animation */
+.top-background {
+  position: relative;
+  margin: auto;
+  height: 30rem;
+  width: 40rem;
+  /* background: rgba(255, 255, 255, 0.5); */
+}
+.n {
+  opacity: 0;
+  border-radius: 12px; animation-name: fadein; animation-duration: 2s;
+  animation-fill-mode: forwards; /*これで値を保持*/
+  will-change: transform;
+}
+@keyframes fadein {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* chatan img animation */
+.ct-background {
+  position: relative;
+  margin: auto;
+  height: 30rem;
+  width: 40rem;
+  /* background: rgba(255, 255, 255, 0.5); */
+}
+.n1 {
+  opacity: 0;
+  border-radius: 12px; animation-name: zoom; animation-duration: 2s;
+  animation-fill-mode: forwards; /*これで値を保持*/
+  will-change: transform;
+}
+@keyframes zoom {
+  from {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1, 1);
+  }
+}
+
+
 
 /* about */
 .top-about {
@@ -145,7 +206,7 @@
 }
 .gradient-filter {
   background: rgba(0, 0, 0, 0.2);
-  padding: 3% 0;
+  padding: 8% 0;
 }
 .top-about h2 {
   font-weight: 600;
@@ -190,8 +251,14 @@
   .top-visual {
     padding-top: 60px;
   }
-  .topimg {
-    padding: 15%;
+  .gradient {
+    padding: 0;
+  }
+  .top-background {
+    margin: 15% auto;
+  }
+  .ct-background {
+    margin: 15% auto;
   }
   .aboutimg {
     padding: 15%;

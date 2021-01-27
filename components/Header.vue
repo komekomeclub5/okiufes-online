@@ -3,15 +3,15 @@
     <header>
         <div class="container">
             <div class="logo">
-                <Nuxtlink to="/" class="logo-name">OKIU Fes.</Nuxtlink>
+                <Nuxtlink @click="$router.push('/')"  class='logo-name'>OKIU Fes.</Nuxtlink>
             </div>
 
             <div class="nav pc">
-                <Nuxtlink to="/" class="name">イベントについて</Nuxtlink>
-                <Nuxtlink to="/" class="name">SNS</Nuxtlink>
-                <Nuxtlink to="/" class="name">団体紹介</Nuxtlink>
-                <Nuxtlink to="/" class="name">感染症対策について</Nuxtlink>
-                <Nuxtlink to="/" class="name">お問い合わせ</Nuxtlink>
+                <Nuxtlink  @click="$router.push('/about')" class="name hover9">イベントについて</Nuxtlink>
+                <Nuxtlink @click="$router.push('/')"  class="name hover9">SNS</Nuxtlink>
+                <Nuxtlink @click="$router.push('/')"  class="name hover9">団体紹介</Nuxtlink>
+                <Nuxtlink @click="$router.push('/')"  class="name hover9">感染症対策について</Nuxtlink>
+                <Nuxtlink @click="$router.push('/')"  class="name hover9">お問い合わせ</Nuxtlink>
             </div>
             <!-- スマホのみ -->
             <div class="header-logo-menu sp">
@@ -21,11 +21,11 @@
                         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
                     <div id="nav-content">
                         <ul>
-                            <li><Nuxtlink to="/" class="namesp">イベントについて</Nuxtlink></li>
-                            <li><Nuxtlink to="/" class="namesp">SNS</Nuxtlink></li>
-                            <li><Nuxtlink to="/" class="namesp">団体紹介</Nuxtlink></li>
-                            <li><Nuxtlink to="/" class="namesp">感染症対策について</Nuxtlink></li>
-                            <li><Nuxtlink to="/" class="namesp">お問い合わせ</Nuxtlink></li>
+                            <li><Nuxtlink @click="$router.push('/about')"  class="namesp">イベントについて</Nuxtlink></li>
+                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">SNS</Nuxtlink></li>
+                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">団体紹介</Nuxtlink></li>
+                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">感染症対策について</Nuxtlink></li>
+                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">お問い合わせ</Nuxtlink></li>
                         </ul>
                     </div>
                 </div>
@@ -57,12 +57,16 @@ header {
 .logo-name {
     font-size: 2rem;
     text-decoration: none;
+    cursor: pointer
 }
+
 .name {
     margin: 0 10px;
     text-decoration: none;
     font-size: 1.6rem;
+    cursor: pointer
 }
+
 header a:visited {color: inherit;}
 
 ul {
@@ -171,11 +175,37 @@ ul {
 .namesp {
     text-decoration: none;
     font-size: 3rem;
+    cursor: pointer
 }
 
 
-/* PC Nav */
-/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+/* animation */
+.hover9 {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  transform-origin: center;
+}
+
+.hover9::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FFF;
+  transition: all 0.3s ease 0s;
+}
+.hover9:hover {
+  cursor: pointer;
+}
+.hover9:hover::after {
+  width: 100%;
+}
+
+
+/* mobile */ 
 .pc { display: none !important; }
 .sp { display: block !important; }
 

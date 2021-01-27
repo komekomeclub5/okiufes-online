@@ -14,7 +14,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      {src: '/granim.js-2.0.0/dist/granim.min.js'}
     ]
   },
 
