@@ -102,12 +102,12 @@ p {
 }
 @media screen and (max-width: 770px) {
     html {
-        font-size: 45%;
+        font-size: 50%;
     }
 }
 @media screen and (max-width: 425px) {
     html {
-        font-size: 40%;
+        font-size: 50%;
     }
 }
 </style>

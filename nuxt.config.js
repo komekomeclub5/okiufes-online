@@ -38,7 +38,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxt/content'
   ],
 
   webfontloader: {
@@ -49,5 +50,14 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  generate: {
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content('news' || 'index').fetch()
+
+      return files.map(file => file.path === '/index' ? '/' : file.path)
+    }
   }
 }

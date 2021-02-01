@@ -8,10 +8,8 @@
 
             <div class="nav pc">
                 <Nuxtlink  @click="$router.push('/about')" class="name hover9">イベントについて</Nuxtlink>
-                <Nuxtlink @click="$router.push('/')"  class="name hover9">SNS</Nuxtlink>
-                <Nuxtlink @click="$router.push('/')"  class="name hover9">団体紹介</Nuxtlink>
-                <Nuxtlink @click="$router.push('/')"  class="name hover9">感染症対策について</Nuxtlink>
-                <Nuxtlink @click="$router.push('/')"  class="name hover9">お問い合わせ</Nuxtlink>
+                <Nuxtlink @click="$router.push('/')"  class="name hover9">お知らせ</Nuxtlink>
+                <Nuxtlink @click="$router.push('/')"  class="name hover9">感染対策について</Nuxtlink>
             </div>
             <!-- スマホのみ -->
             <div class="header-logo-menu sp">
@@ -22,10 +20,8 @@
                     <div id="nav-content">
                         <ul>
                             <li><Nuxtlink @click="$router.push('/about')"  class="namesp">イベントについて</Nuxtlink></li>
-                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">SNS</Nuxtlink></li>
-                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">団体紹介</Nuxtlink></li>
+                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">お知らせ</Nuxtlink></li>
                             <li><Nuxtlink @click="$router.push('/')"  class="namesp">感染症対策について</Nuxtlink></li>
-                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">お問い合わせ</Nuxtlink></li>
                         </ul>
                     </div>
                 </div>
@@ -42,7 +38,7 @@ header {
     padding: 15px 0;
     width: 100%;
     z-index: 10;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.4);
     color: #fff;
 
 }

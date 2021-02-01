@@ -16,25 +16,125 @@
                         </p>
                         </div>
                         <div class="col-sm">
-                            <img class="aboutimg" src="/top/about.png" />
+                            <div class="ct-background">
+                              <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
+                                <img :src='item1.src' :class="item1.class" :style='item1.style'>
+                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- date -->
+        <div class="about-date">
+          <div class="container">
+            <h2>開催日時</h2>
+            <p class="date">X月XX日（X曜日）XX:XX~XX:XX</p>
+            <p class="date-sub">オンラインサービスでのLIVE配信</p>
+          </div>
+        </div>
 
+        <!-- Circle -->
+        <div class="about-circle">
+          <div class="circle-gradient">
+            <div class="circle-gradient2">
+              <div class="container">
+                <div class="row circle-row">
+                  <h2>出演団体</h2>
+                  <div v-for="n in circle" :key="n.slug" class="circle-list col-sm-6  col-md-3">
+                    <nuxt-link :to="'/circle/'+ n.slug" class="circle-contents">
+                      <img :src="n.img" :alt="n.title + 'の写真'">
+                      <div class="circle-name">
+                        {{n.title}}
+                      </div>
+                    </nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SNS -->
+        <div class="about-sns">
+          <div class="container">
+            <h2>イベントをオンラインで楽しむ！</h2>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="sns-youtube">
+                  <p class="sns-title">YouTube</p>
+                  <p class="sns-text">Liveを見ながらフォローしたり、<br>コメントしたり、自分だけの楽しみ方を</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="sns-twitter">
+                  <p class="sns-title">Twitter</p>
+                  <p class="sns-text">実行委員公式と繋がって情報ゲット！<br>＃okiufes2020でツイートしよう</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="sns-instagram">
+                  <p class="sns-title">Instagram</p>
+                  <p class="sns-text">Liveに参加したり、コメントしたり<br>インスタで情報をゲット</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="about-schedule">
+          <div class="circle-gradient">
+            <div class="circle-gradient2">
+              <div class="container">
+                <h2>タイムスケジュール</h2>
+
+                <div class="schedule">
+                  <ul class="schedule-child">
+                    <li v-for="(sitem1, sindex1) in $store.getters['schedule/scheduleList']" :key="sindex1">
+                  
+                      <img :src="sitem1.img" :alt="sitem1.circle + '-photo'" class="schedule-img">
+                      <div class="schedule-text">
+                        <h3>{{sitem1.time}}</h3>
+                        <p>{{sitem1.circle}}<br>{{sitem1.event}}</p>
+                      </div>
+                      
+                  
+                    </li>
+                  </ul>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
     </div>
     
 </template>
 
+<script>
+export default {
+  async asyncData ({ $content, params }) {
+    const query = await $content('circle' || 'index').limit(15)
+    const circle = await query.fetch()
+    return { circle }
+  }
+
+}
+</script>
 
 
 <style>
+.left {
+  margin: auto 0;
+}
 .about {
   display: block;
   width: 100%;
+  padding-top: 60px;
   background: #00FFF7;
   background: -moz-linear-gradient(left, #004BFF 0%, #00FFF7 100%);
   background: -webkit-gradient(linear, left center, right center, from(#004BFF), to(#00FFF7));
@@ -60,4 +160,147 @@
   height: auto;
   padding: 10% 2% 10% 20%;
 }
+
+/* chatan img animation */
+.ct-background {
+  position: relative;
+  margin: auto;
+  height: 30rem;
+  width: 40rem;
+  /* background: rgba(255, 255, 255, 0.5); */
+}
+.n1 {
+  opacity: 0;
+  border-radius: 12px; animation-name: zoom; animation-duration: 2s;
+  animation-fill-mode: forwards; /*これで値を保持*/
+  will-change: transform;
+}
+@keyframes zoom {
+  from {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1, 1);
+  }
+}
+
+/* date */
+.about-date {
+  padding: 5% 0;
+  text-align: center;
+}
+.about-date h2 {
+  padding-bottom: 3%;
+}
+.date {
+  font-size: 4.4rem;
+}
+
+/* Circle */
+.about-circle {
+  background-image: url("/about/acer.png");
+  text-align: center;
+  color: #fff;
+}
+.about-circle h2{
+  padding-bottom: 3%;
+}
+.circle-gradient {
+  background: linear-gradient(90deg, rgba(0, 77, 255, 0.85) 0%, rgba(0, 255, 247, 0.85) 100%);
+}
+.circle-gradient2 {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5% 0;
+}
+.circle-row {
+  margin: 0 auto;
+}
+.circle-contents img {
+  object-fit: cover;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 20px;
+  margin: auto;
+}
+.circle-contents {
+  text-decoration: none;
+  color: #fff;
+}
+.circle-name {
+  padding: 5% 0;
+  font-size: 2.4rem;
+}
+
+/* SNS */
+.about-sns {
+  padding: 5% 0;
+  
+}
+.about-sns h2 {
+  text-align: center;
+  padding-bottom: 3%;
+}
+.sns-youtube {
+  margin: 0 auto;
+  width: 80%;
+  background:linear-gradient( #E43535 0%, #B12F2F 100%);
+  border-radius: 20px;
+  color: #fff;
+}
+.sns-twitter {
+  margin: 0 auto;
+  width: 80%;
+  background:linear-gradient( #359EE4 0%, #2B79AE 100%);
+  border-radius: 20px;
+  color: #fff;
+}
+.sns-instagram {
+  margin: 0 auto;
+  width: 80%;
+  background:linear-gradient( #D83D9A 0%, #AF307C 100%);
+  border-radius: 20px;
+  color: #fff;
+}
+.sns-title {
+  padding: 20rem 2rem 0 2rem;
+  font-size: 3rem;
+  font-weight: 600;
+}
+.sns-text {
+  padding: 2rem;
+}
+
+/* Schedule */
+.about-schedule {
+  background-image: url("/schedule/background.jpg");
+  color: #fff;
+}
+.about-schedule h2 {
+  text-align: center;
+}
+.schedule {
+  display: flex;
+  margin: 0 auto;
+}
+.schedule-child {
+  width: 80%;
+  list-style: none outside;
+  margin: 5% 10%;
+}
+.schedule-child li{
+  float: left;
+  width: 50%;
+  padding:1%;
+}
+.schedule-img{
+  width: 21%;
+  height: auto;
+  float: left;
+  margin: 0 7% 0 0;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.2);
+}
+
 </style>

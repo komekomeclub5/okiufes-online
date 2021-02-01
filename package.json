@@ -14,6 +14,8 @@
     "nuxt-webfontloader": "^1.1.0"
   },
   "devDependencies": {
+    
     "@nuxtjs/google-fonts": "^1.2.0"
   }
 }
+

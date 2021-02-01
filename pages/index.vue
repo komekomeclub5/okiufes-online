@@ -82,13 +82,52 @@
         </div>
       </div>
     </div>
+
+    <!-- info -->
+    <div class="top-info">
+      <div class="info-gradient">
+        <div class="container">
+            <h2>お知らせ</h2>
+            <div v-for="n in news" :key="n.slug" class="news-list">
+              <nuxt-link :to="'/news/'+ n.slug" class="news-contents">{{n.title}} ( {{n.date}} )</nuxt-link>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Appearance -->
+    <div class="top-appearance">
+      <div class="ap-gradient">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm left">
+              <p>沖国大　学生限定</p>
+              <h2>イベントに出演して楽しもう</h2>
+              <p>皆さんの日頃の取り組みを発表できる特別イベントを企画しました。ページから出演エントリーして今年だけの思い出を作りましょう！</p>
+            </div>
+            <div class="col-sm">
+              <img src="top/forms.png" alt="GoogleForms Logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   
     
 </template>
 
-
+<script>
+export default {
+  async asyncData ({ $content, params }) {
+    const query = await $content('news' || 'index').limit(15)
+    const news = await query.fetch()
+    return { news }
+  }
+}
+</script>
 
 <style>
 /* top */
@@ -206,7 +245,7 @@
 }
 .gradient-filter {
   background: rgba(0, 0, 0, 0.2);
-  padding: 8% 0;
+  padding: 6% 0;
 }
 .top-about h2 {
   font-weight: 600;
@@ -230,7 +269,7 @@
   padding: 5% 0;
 }
 .top-enjoy h2 {
-  padding-bottom: 2%;
+  padding-bottom: 3%;
 }
 .top-enjoy h3 {
   padding: 2% 0;
@@ -241,6 +280,47 @@
 .enjoy-more {
   padding: 4% 0;
   color: #FF6F00;
+}
+
+/* info */
+.top-info {
+  display: block;
+  width: 100%;
+  background: linear-gradient(-45deg, #FF00A2 0%, #6600FF 100%);
+  color: #fff;
+  text-align: center;
+}
+.top-info h2{
+  padding-bottom: 3%;
+}
+.info-gradient {
+  padding: 5% 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.news-list {
+  max-width: 500px;
+  text-align: left;
+  margin: 0 auto;
+}
+.news-list a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Appearance */
+.top-appearance {
+  background: linear-gradient(90deg, rgba(255, 0, 94, 0.3) 0%, rgba(255, 145, 0, 0.3) 100%);
+}
+.top-appearance h2 {
+  padding-bottom: 3%;
+}
+.top-appearance img {
+  margin: 0 auto;
+}
+.ap-gradient {
+  padding: 5% 0;
+  background: linear-gradient(90deg, rgba(255, 0, 94, 0.3) 0%, rgba(255, 145, 0, 0.3) 100%);
 }
 
 @media screen and (max-width: 575px) {
@@ -257,6 +337,9 @@
   .top-background {
     margin: 15% auto;
   }
+  .gradient-filter {
+    padding: 8% 0;
+  }
   .ct-background {
     margin: 15% auto;
   }
@@ -265,3 +348,5 @@
   }
 }
 </style>
+
+
