@@ -37,12 +37,12 @@
               <transition name="menu">
                 <div class="menu" v-show="ActiveBtn">
                     <ul>
-                        <li><Nuxtlink @click="$router.push('/')"  class="namesp">TOP</Nuxtlink></li>
-                        <li><Nuxtlink @click="$router.push('/about')"  class="namesp">イベントについて</Nuxtlink></li>
-                        <li><Nuxtlink @click="$router.push('/news')"  class="namesp">お知らせ</Nuxtlink></li>
-                        <li><Nuxtlink @click="$router.push('/')"  class="namesp">感染症対策について</Nuxtlink></li>
+                        <li><Nuxtlink @click="$router.push('/')"  class="namesp" v-on:click="ActiveBtn = false">TOP</Nuxtlink></li>
+                        <li><Nuxtlink @click="$router.push('/about')"  class="namesp" v-on:click="ActiveBtn = false">イベントについて</Nuxtlink></li>
+                        <li><Nuxtlink @click="$router.push('/news')"  class="namesp" v-on:click="ActiveBtn = false">お知らせ</Nuxtlink></li>
+                        <li><Nuxtlink @click="$router.push('/')"  class="namesp" v-on:click="ActiveBtn = false">感染症対策について</Nuxtlink></li>
                     </ul>
-                </div>
+                </div> 
               </transition>
             </div>
 

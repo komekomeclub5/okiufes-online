@@ -106,8 +106,11 @@ p {
     }
 }
 @media screen and (max-width: 425px) {
-    html {
-        font-size: 62.5%;
+    h1 {
+      font-size: 6rem;
+    }
+    h2 {
+      font-size: 3.8rem;
     }
 }
 @media screen and (max-width: 320px) {

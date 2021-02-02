@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md left">
-                <h2>このイベントについて</h2>
+                <h2>このイベントに<br class="sp">ついて</h2>
                 <p>
                     このイベントは、今年度のコロナ禍での様々なイベント中止を受け、<br>
                     大学生としての生活に思うように進まない1年次、<br>
@@ -58,21 +58,21 @@
       <div class="container">
         <h2>イベントを最大限に楽しもう</h2>
         <div class="row">
-          <div class="col-sm">
+          <div class="col-sm enjoy-box">
             <h3>SNSで楽しむ</h3>
             <p>
               フォローしたり、コメントしたり、LIVEを見たり自分だけの楽しみ方を見つける。新しい楽しみ方もここで。
             </p>
             <Nuxtlink @click="$router.push('/')" class="enjoy-more">もっとみる</Nuxtlink>
           </div>
-          <div class="col-sm">
+          <div class="col-sm enjoy-box">
             <h3>団体を知る</h3>
             <p>
               あなたが気になる出演団体について知ることができればきっと楽しさ倍増！？お気に入りの団体も見つかるかも
             </p>
             <Nuxtlink @click="$router.push('/')" class="enjoy-more">もっとみる</Nuxtlink>
           </div>
-          <div class="col-sm">
+          <div class="col-sm enjoy-box">
             <h3>感染対策の徹底</h3>
             <p>
               多くの人に楽しんでいただくために新しい生活様式を取り入れ、感染対策にも取り組んでいます。
@@ -88,9 +88,12 @@
       <div class="info-gradient">
         <div class="container">
             <h2>お知らせ</h2>
-            <div v-for="n in news" :key="n.slug" class="news-list">
-              <nuxt-link :to="'/news/'+ n.slug" class="news-contents">{{n.title}} ( {{n.date}} )</nuxt-link>
+            <div class="news-block">
+              <div v-for="n in news" :key="n.slug" class="news-list">
+                <nuxt-link :to="'/news/'+ n.slug" class="news-contents">{{n.date}}　<br class="sp">{{n.title}}</nuxt-link>
+              </div>
             </div>
+            
         </div>
       </div>
     </div>
@@ -166,7 +169,6 @@ export default {
 }
 .top-visual h1 {
   padding: 3% 0;
-  font-size: 8rem;
   font-weight: 800;
   line-height: 1.2;
   color: #fff;
@@ -268,6 +270,9 @@ export default {
   width: 100%;
   padding: 5% 0;
 }
+.enjoy-box {
+  padding: 1.5% 0;
+}
 .top-enjoy h2 {
   padding-bottom: 3%;
 }
@@ -292,17 +297,24 @@ export default {
 }
 .top-info h2{
   padding-bottom: 3%;
+  
 }
 .info-gradient {
   padding: 5% 0;
   background: rgba(0, 0, 0, 0.2);
 }
+.news-block {
+  display: table;
+	margin: auto;
+}
 .news-list {
-  max-width: 500px;
+  max-width: 700px;
   text-align: left;
-  margin: 0 auto;
+  margin: 10px auto;
+  
 }
 .news-list a{
+  text-align: left;
   text-decoration: none;
   color: #fff;
   font-size: 18px;

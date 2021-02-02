@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm left">
-                        <h2>このイベントについて</h2>
+                        <h2>このイベントに<br class="sp">ついて</h2>
                         <p>
                             このイベントは、今年度のコロナ禍での様々なイベント中止を受け、<br>
                             大学生としての生活に思うように進まない1年次、<br>
@@ -295,15 +295,19 @@ export default {
 .schedule-child li{
   float: left;
   width: 100%;
-  padding:1%;
+  padding:3%;
 }
 .schedule-img{
   width: 21%;
   height: auto;
   float: left;
-  margin: 0 7% 0 0;
+  margin: 0 5% 0 0;
   border-radius: 10px;
   box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.2);
+}
+.schedule-text {
+  width: 70%;
+  float: right;
 }
 
 @media screen and (max-width: 768px) {
@@ -339,6 +343,9 @@ export default {
   .about-date {
     padding: 10% 0;
   }
+  .date {
+    font-size: 3.5rem;
+  }
   .circle-gradient2 {
     padding: 10% 0;
   }
@@ -362,10 +369,13 @@ export default {
     list-style: none outside;
     column-count: 1;
     margin: 0;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 5px;
   }
   .schedule-child li {
     padding: 3% 1%;
+  }
+  .schedule-img {
+    margin: 3% 5% 3% 0;
   }
 }
 
