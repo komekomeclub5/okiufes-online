@@ -307,12 +307,19 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
+  .ct-background {
+    height: 15em;
+    width: 20em;
+  }
   .about-gradient-filter {
     padding: 11% 0 6% 0;
   }
   .circle-gradient2 h2 {
     padding-bottom: 5%;
   }
+.schedule-img {
+    width: 25%;
+}
   .schedule-child {
     width: 100%;
     list-style: none outside;

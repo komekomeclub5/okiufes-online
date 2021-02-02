@@ -8,11 +8,11 @@
 
             <div class="nav pc">
                 <Nuxtlink  @click="$router.push('/about')" class="name hover9">イベントについて</Nuxtlink>
-                <Nuxtlink @click="$router.push('/')"  class="name hover9">お知らせ</Nuxtlink>
+                <Nuxtlink @click="$router.push('/news')"  class="name hover9">お知らせ</Nuxtlink>
                 <Nuxtlink @click="$router.push('/')"  class="name hover9">感染対策について</Nuxtlink>
             </div>
             <!-- スマホのみ -->
-            <div class="header-logo-menu sp">
+            <!-- <div class="header-logo-menu sp">
                 <div id="nav-drawer">
                         <input id="nav-input" type="checkbox" class="nav-unshown">
                         <label id="nav-open" for="nav-input"><span></span></label>
@@ -25,12 +25,42 @@
                         </ul>
                     </div>
                 </div>
+            </div> -->
+            <div id="app" class="sp">
+              <!--ハンバーガーメニューのボタン-->
+              <div class="hamburger_btn" v-on:click='ActiveBtn=!ActiveBtn'>
+                <span class="line line_01" v-bind:class="{'btn_line01':ActiveBtn}"></span>
+                <span class="line line_02" v-bind:class="{'btn_line02':ActiveBtn}"></span>
+                <span class="line line_03" v-bind:class="{'btn_line03':ActiveBtn}"></span>
+              </div>
+              <!--サイドバー-->
+              <transition name="menu">
+                <div class="menu" v-show="ActiveBtn">
+                    <ul>
+                        <li><Nuxtlink @click="$router.push('/')"  class="namesp">TOP</Nuxtlink></li>
+                        <li><Nuxtlink @click="$router.push('/about')"  class="namesp">イベントについて</Nuxtlink></li>
+                        <li><Nuxtlink @click="$router.push('/news')"  class="namesp">お知らせ</Nuxtlink></li>
+                        <li><Nuxtlink @click="$router.push('/')"  class="namesp">感染症対策について</Nuxtlink></li>
+                    </ul>
+                </div>
+              </transition>
             </div>
 
             
         </div>
     </header>
 </template>
+
+<script>
+export default {
+  name: "App",
+  data() {
+    return {
+        ActiveBtn: false
+    };
+  }
+};
+</script>
 
 <style>
 header {
@@ -71,134 +101,96 @@ ul {
 
 /* ハンバーガー */
 
-#nav-drawer {
-  position: relative;
-}
 
-/*チェックボックス等は非表示に*/
-.nav-unshown {
-  display:none;
-}
 
-/*アイコンのスペース*/
-#nav-open {
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  vertical-align: middle;
-}
 
-/*ハンバーガーの形をCSSで表現*/
-#nav-open span, #nav-open span:before, #nav-open span:after {
-  position: absolute;
-  height: 3px;/*線の太さ*/
-  width: 25px;/*長さ*/
-  border-radius: 3px;
-  background: #FFF;
-  display: block;
-  content: '';
-  cursor: pointer;
-}
-#nav-open span:before {
-  bottom: -8px;
-}
-#nav-open span:after {
-  bottom: -16px;
-}
-
-/*閉じる用の薄黒箇所*/
-#nav-close {
-  display: none;
-  position: fixed;
-  z-index: 99;
-  top: 40%;
-  right: 0;
-  width: 100%;
-  height: 60%;
-  background: rgba(0, 0, 0, 0.05);
-  opacity: 0;
-  transition: .3s ease-in-out;
-}
-
-/*メニューの中身*/
-#nav-content {
-  overflow: auto;
-  position: fixed;
+/*ボタン*/
+.hamburger_btn {
+  position: fixed; /*常に最上部に表示したいので固定*/
   top: 0;
-  left: 0;
-  z-index: 50;
-  width: 100%;
-  max-width: 100%;/*最大幅（お好みで調整を）*/
-  font-size: 3rem;
-  height: 40%;
-  background: rgba(0, 0, 0);
-  transition: .3s ease-in-out;
-  -webkit-transform: translateY(-105%);
-  transform: translateY(-105%);
-  padding-top: 12%;
-}
-
-#nav-content li {
-    padding: 2% 0;
-}
-
-/*チェックがついたら表示させる*/
-#nav-input:checked ~ #nav-close {
-  display: block;
-  opacity: .5;
-}
-
-#nav-input:checked ~ #nav-content {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-  box-shadow: 6px 0 25px rgba(0,0,0,.15);
-}
-
-.header-logo-menu{
- display: flex;
- display: -moz-flex;
- display: -o-flex;
- display: -webkit-flex;
- display: -ms-flex;
- flex-direction: row;
- -moz-flex-direction: row;
- -o-flex-direction: row;
- -webkit-flex-direction: row;
- -ms-flex-direction: row;
- float: right;
-}
-
-.namesp {
-    text-decoration: none;
-    font-size: 3rem;
-    cursor: pointer
-}
-
-
-/* animation */
-.hover9 {
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  transform-origin: center;
-}
-
-.hover9::after {
-  position: absolute;
-  content: '';
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #FFF;
-  transition: all 0.3s ease 0s;
-}
-.hover9:hover {
+  right: 0;
+  width: 70px;
+  height: 60px;
   cursor: pointer;
+  z-index: 50;
 }
-.hover9:hover::after {
-  width: 100%;
+
+.hamburger_btn .line {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 32px;
+  height: 3px;
+  background: #fff;
+  text-align: center;
 }
+
+.hamburger_btn .line_01 {
+  top: 18px;
+  transition: 0.4s ease;
+}
+.hamburger_btn .line_02 {
+  top: 28px;
+  transition: 0.4s ease;
+}
+.hamburger_btn .line_03 {
+  top: 38px;
+  transition: 0.4s ease;
+}
+
+
+.btn_line01 {
+  transform: translateY(10px) rotate(-45deg);
+  transition: 0.4s ease;
+}
+.btn_line02 {
+  transition: 0.4s ease;
+  opacity: 0;
+}
+.btn_line03 {
+  transform: translateY(-10px) rotate(45deg);
+  transition: 0.4s ease;
+}
+
+/*サイドバー*/
+.menu-enter-active, .menu-leave-active {
+  transition: opacity 0.2s;
+}
+.menu-enter, .menu-leave-to {
+  opacity: 0;
+}
+.menu-leave, .menu-enter-to{
+  opacity: 1;
+}
+
+.menu li {
+  list-style: none;
+  line-height: 1;
+  padding: 1rem;
+}
+.menu {
+    background-color:rgba(0,0,0,0.95);
+    z-index: 30;
+    padding: 10vh 5vw;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    font-size: 2.5rem;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0 2rem;
+}
+.menu ul{
+  margin: 1rem;
+  padding: 0;
+}
+
+
 
 
 /* mobile */ 

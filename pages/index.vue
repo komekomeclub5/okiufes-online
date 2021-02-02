@@ -6,12 +6,12 @@
       <div class="gradient">
         <div class="container">
           <div class="row pd">
-            <div class="col-sm left">
+            <div class="col-md left">
               <p class="special">特別イベント</p>
               <h1>学生生活<br>発表会</h1>
               <p>今のこの時だからこそできることがある。<br>さあ立ち上がろう</p>
             </div>
-            <div class="col-sm">
+            <div class="col-md">
       
               <div class="top-background">
                 <div v-for="(item, index) in $store.getters['imgmodule/itemsList']" :key="index">
@@ -30,7 +30,7 @@
       <div class="gradient-filter">
         <div class="container">
             <div class="row">
-                <div class="col-sm left">
+                <div class="col-md left">
                 <h2>このイベントについて</h2>
                 <p>
                     このイベントは、今年度のコロナ禍での様々なイベント中止を受け、<br>
@@ -40,7 +40,7 @@
                     新しい生活様式を模索したいとの考えから企画されました。
                 </p>
               </div>
-              <div class="col-sm">
+              <div class="col-md">
                 <!-- <img class="aboutimg" src="/top/about.png" /> -->
                 <div class="ct-background">
                   <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
@@ -100,12 +100,12 @@
       <div class="ap-gradient">
         <div class="container">
           <div class="row">
-            <div class="col-sm left">
+            <div class="col-md left">
               <p>沖国大　学生限定</p>
               <h2>イベントに出演して楽しもう</h2>
               <p>皆さんの日頃の取り組みを発表できる特別イベントを企画しました。ページから出演エントリーして今年だけの思い出を作りましょう！</p>
             </div>
-            <div class="col-sm">
+            <div class="col-md">
               <img src="top/forms.png" alt="GoogleForms Logo">
             </div>
           </div>
@@ -325,7 +325,14 @@ export default {
 
 /* tablet */
 @media screen and (max-width:768px) {
-  
+  .top-background {
+    height: 15em;
+    width: 20em;
+  }
+  .ct-background {
+    height: 15em;
+    width: 20em;
+  }
 }
 
 /* smartphone */
@@ -355,6 +362,7 @@ export default {
   }
   .ct-background {
     margin: 15% auto;
+    
   }
   .aboutimg {
     padding: 15%;

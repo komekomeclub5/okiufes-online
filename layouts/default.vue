@@ -72,7 +72,7 @@ main {
     min-height: 600px;
     margin: 0 auto;
     background-color: #fff;
-    font-size: 1.6rem;
+    font-size: 1.6em;
   }
   
 h1 {
@@ -97,17 +97,17 @@ p {
 }
 @media screen and (max-width: 1024px) {
     html {
-        font-size: 50%;
+        font-size: 62.5%;
     }
 }
 @media screen and (max-width: 770px) {
     html {
-        font-size: 50%;
+        font-size: 62.5%;
     }
 }
 @media screen and (max-width: 425px) {
     html {
-        font-size: 50%;
+        font-size: 62.5%;
     }
 }
 @media screen and (max-width: 320px) {
