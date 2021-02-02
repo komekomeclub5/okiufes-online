@@ -110,7 +110,7 @@ p {
         font-size: 50%;
     }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 320px) {
     html {
         font-size: 40%;
     }
