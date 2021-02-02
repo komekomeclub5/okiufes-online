@@ -115,7 +115,7 @@ footer {
 
 @media screen and (max-width: 575px) {
     .footer-con {
-        padding: 3% 1%;
+        padding: 10% 1%;
     }
     .snslogo img{
         width: 54px;/*幅*/

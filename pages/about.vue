@@ -2,7 +2,7 @@
     <!-- About -->
     <div>
         <div class="about">
-            <div class="gradient-filter">
+            <div class="about-gradient-filter">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm left">
@@ -134,7 +134,6 @@ export default {
 .about {
   display: block;
   width: 100%;
-  padding-top: 60px;
   background: #00FFF7;
   background: -moz-linear-gradient(left, #004BFF 0%, #00FFF7 100%);
   background: -webkit-gradient(linear, left center, right center, from(#004BFF), to(#00FFF7));
@@ -142,9 +141,10 @@ export default {
   background: -o-linear-gradient(left, #004BFF 0%, #00FFF7 100%);
   background: linear-gradient(to right, #004BFF 0%, #00FFF7 100%);
 }
-.gradient-filter {
+.about-gradient-filter {
+  padding-top: 60px;
+  padding: 8% 0 6% 0;
   background: rgba(0, 0, 0, 0.2);
-  padding: 3% 0;
 }
 .about h2 {
   font-weight: 600;
@@ -233,6 +233,7 @@ export default {
   font-size: 2.4rem;
 }
 
+
 /* SNS */
 .about-sns {
   padding: 5% 0;
@@ -287,11 +288,13 @@ export default {
 .schedule-child {
   width: 80%;
   list-style: none outside;
+  column-count: 2;
   margin: 5% 10%;
+  padding: 0;
 }
 .schedule-child li{
   float: left;
-  width: 50%;
+  width: 100%;
   padding:1%;
 }
 .schedule-img{
@@ -303,4 +306,61 @@ export default {
   box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.2);
 }
 
+@media screen and (max-width: 768px) {
+  .about-gradient-filter {
+    padding: 11% 0 6% 0;
+  }
+  .circle-gradient2 h2 {
+    padding-bottom: 5%;
+  }
+  .schedule-child {
+    width: 100%;
+    list-style: none outside;
+    column-count: 2;
+    margin: 0;
+    padding: 0 0 0 20px;
+  }
+  .schedule-child li {
+    padding: 3% 1%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .about-gradient-filter {
+    padding:20% 0 10% 0;
+  }
+  .about-date {
+    padding: 10% 0;
+  }
+  .circle-gradient2 {
+    padding: 10% 0;
+  }
+  .about-sns {
+    padding:10% 0;
+  }
+  .about-sns h2 {
+    padding-bottom:5%;
+  }
+  .sns-youtube {
+    margin: 3% auto;
+  }
+  .sns-twitter {
+    margin: 3% auto;
+  }
+  .sns-instagram {
+    margin: 3% auto;
+  }
+  .schedule-child {
+    width: 100%;
+    list-style: none outside;
+    column-count: 1;
+    margin: 0;
+    padding: 0 0 0 20px;
+  }
+  .schedule-child li {
+    padding: 3% 1%;
+  }
+}
+
 </style>
+

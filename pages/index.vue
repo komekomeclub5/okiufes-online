@@ -323,7 +323,17 @@ export default {
   background: linear-gradient(90deg, rgba(255, 0, 94, 0.3) 0%, rgba(255, 145, 0, 0.3) 100%);
 }
 
+/* tablet */
+@media screen and (max-width:768px) {
+  
+}
+
+/* smartphone */
 @media screen and (max-width: 575px) {
+  .pd {
+    padding: 6% 0;
+  }
+
   .container {
     width: 95%;
     margin: 0 2.5%;
@@ -338,13 +348,25 @@ export default {
     margin: 15% auto;
   }
   .gradient-filter {
-    padding: 8% 0;
+    padding: 10% 0;
+  }
+  .top-enjoy {
+    padding: 10% 0;
   }
   .ct-background {
     margin: 15% auto;
   }
   .aboutimg {
     padding: 15%;
+  }
+  .info-gradient {
+    padding: 10% 0;
+  }
+  .ap-gradient {
+    padding: 10% 0;
+  }
+  .top-appearance img {
+    margin: 20% auto;
   }
 }
 </style>
