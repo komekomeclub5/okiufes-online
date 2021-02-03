@@ -39,6 +39,7 @@
                     大学生活に対しての思いをなくしてしまわない様、<br>
                     新しい生活様式を模索したいとの考えから企画されました。
                 </p>
+                <MyButton link="/about">もっとみる</MyButton>
               </div>
               <div class="col-md">
                 <!-- <img class="aboutimg" src="/top/about.png" /> -->
@@ -63,21 +64,21 @@
             <p>
               フォローしたり、コメントしたり、LIVEを見たり自分だけの楽しみ方を見つける。新しい楽しみ方もここで。
             </p>
-            <Nuxtlink @click="$router.push('/')" class="enjoy-more">もっとみる</Nuxtlink>
+            <nuxt-link to="/" class="enjoy-more">もっとみる</nuxt-link>
           </div>
           <div class="col-sm enjoy-box">
             <h3>団体を知る</h3>
             <p>
               あなたが気になる出演団体について知ることができればきっと楽しさ倍増！？お気に入りの団体も見つかるかも
             </p>
-            <Nuxtlink @click="$router.push('/')" class="enjoy-more">もっとみる</Nuxtlink>
+            <nuxt-link to="/" class="enjoy-more">もっとみる</nuxt-link>
           </div>
           <div class="col-sm enjoy-box">
             <h3>感染対策の徹底</h3>
             <p>
               多くの人に楽しんでいただくために新しい生活様式を取り入れ、感染対策にも取り組んでいます。
             </p>
-            <Nuxtlink @click="$router.push('/')" class="enjoy-more">もっとみる</Nuxtlink>
+            <nuxt-link to="/" class="enjoy-more">もっとみる</nuxt-link>
           </div>
         </div>
       </div>
@@ -93,7 +94,7 @@
                 <nuxt-link :to="'/news/'+ n.slug" class="news-contents">{{n.date}}　<br class="sp">{{n.title}}</nuxt-link>
               </div>
             </div>
-            
+            <MyButton link="/news">もっとみる</MyButton>
         </div>
       </div>
     </div>
@@ -107,6 +108,7 @@
               <p>沖国大　学生限定</p>
               <h2>イベントに出演して楽しもう</h2>
               <p>皆さんの日頃の取り組みを発表できる特別イベントを企画しました。ページから出演エントリーして今年だけの思い出を作りましょう！</p>
+              <MyButton back_color="#000" fore_color="#fff">出演エントリー</MyButton>
             </div>
             <div class="col-md">
               <img src="top/forms.png" alt="GoogleForms Logo">
@@ -123,13 +125,20 @@
 </template>
 
 <script>
+import MyButton from "~/components/MyButton.vue";
 export default {
+  components: {
+    MyButton
+  },
+
   async asyncData ({ $content, params }) {
-    const query = await $content('news' || 'index').limit(15)
+    const query = await $content('news' || 'index').limit(3)
+    //const news = await $content('contents' || 'index').where({ tags: 'news' }).fetch(3)
     const news = await query.fetch()
     return { news }
   }
-}
+};
+
 </script>
 
 <style>

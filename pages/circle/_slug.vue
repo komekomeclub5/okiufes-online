@@ -3,16 +3,17 @@
     
     <div class="container">
         <div class="page-head">
-            <h2>{{news.title}}</h2>
+            <p>団体紹介</p>
+            <h2>{{circle.title}}</h2>
         </div>
         <dl>
             <dt>date</dt>
-            <dd>{{news.date}}</dd>
+            <dd>{{circle.date}}</dd>
         </dl>
-        <div><img :src="news.image" /></div>
-        <div v-for="tag in news.tags" :key="tag">{{tag}}</div>
+        <div><img :src="circle.image" /></div>
+        <div v-for="tag in circle.tags" :key="tag">{{tag}}</div>
 
-        <nuxt-content :document="news" />
+        <nuxt-content :document="circle" />
     </div>
     
   </article>
@@ -21,8 +22,8 @@
 <script>
 export default {
   async asyncData ({ $content, params }) {
-    const news = await $content('circle', params.slug || 'index').fetch()
-    return { news }
+    const circle = await $content('circle', params.slug || 'index').fetch()
+    return { circle }
   }
 }
 </script>

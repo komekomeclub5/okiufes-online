@@ -3,7 +3,8 @@
     
     <div class="container">
         <div class="page-head">
-            <h2>{{news.title}}</h2>
+          <p>お知らせ</p>
+          <h2>{{news.title}}</h2>
         </div>
         <dl>
             <dt>date</dt>

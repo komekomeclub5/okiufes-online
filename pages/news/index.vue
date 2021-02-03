@@ -2,11 +2,11 @@
   <div>
       <div class="container">
             <div class="page-head">
-                <h2>お知らせ</h2>
+              <h2>お知らせ</h2>
             </div>
             
-            <div v-for="n in news" :key="n.slug" class="news-list">
-                <nuxt-link :to="'/news/'+ n.slug" class="news-contents">{{n.title}} {{n.date}}</nuxt-link>
+            <div v-for="n in news" :key="n.slug" class="news-lists">
+                <nuxt-link :to="'/news/'+ n.slug" class="news-contents"> {{n.date}}　{{n.title}}</nuxt-link>
             </div>
       </div>
     
@@ -18,6 +18,7 @@
 export default {
   async asyncData ({ $content, params }) {
     const query = await $content('news' || 'index').limit(15)
+    //const news = await $content('contents' || 'index').where({ tags: 'news' }).fetch(15)
     const news = await query.fetch()
     return { news }
   }
@@ -28,8 +29,9 @@ export default {
 .page-head {
     padding: 10rem 0 5rem 0;
 }
-.news-list a{
+.news-lists a{
     text-decoration: none;
+    color: #000;
 }
 
 </style>

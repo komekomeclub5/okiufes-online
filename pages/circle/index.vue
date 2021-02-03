@@ -1,35 +1,181 @@
 <template>
   <div>
-      <div class="container">
-            <div class="page-head">
-                <h2>団体紹介</h2>
-            </div>
-            
-            <div v-for="n in news" :key="n.slug" class="news-list">
-                <nuxt-link :to="'/news/'+ n.slug" class="news-contents">{{n.title}} {{n.date}}</nuxt-link>
-            </div>
+    <!-- circle -->
+    <div class="circle">
+      <div class="circle-gradient-filter">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md left">
+                  <h2>団体紹介</h2>
+                  <p>
+                      このイベントは、今年度のコロナ禍での様々なイベント中止を受け、<br>
+                      大学生としての生活に思うように進まない1年次、<br>
+                      これまでのサークル活動や学生生活に励んできた2から4年次の学生が<br>
+                      大学生活に対しての思いをなくしてしまわない様、<br>
+                      新しい生活様式を模索したいとの考えから企画されました。
+                  </p>
+                  </div>
+                  <div class="col-md">
+                      <div class="ct-background">
+                        <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
+                          <img :src='item1.src' :class="item1.class" :style='item1.style'>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    
+    <div class="container">
+      <!-- jikkou -->
+      <div class="jikkou">
+        
+          <p>沖国大　学生限定</p>
+          <h2>実行委員の紹介</h2>
+          <p>実行委員は、大学内で開催される体育祭や学園祭などの企画・運営をしています。多くの人と繋がれるチャンスがここにあります。</p>
+          <MyButton back_color="#000" fore_color="#fff">もっとみる</MyButton>
+        
       </div>
     
+      <!-- circle-list -->
+      <div class="circle-list">
+        <h2>出演団体の紹介</h2>
+        <ul class="circle-list-child">
+          <li v-for="n in circle" :key="n.slug">
+            <div class="list-frame">
+              <div class="circle-img-frame">
+                <img :src=n.img :alt="n.title + 'の写真'">  
+              </div>
+              <h3>{{n.title}}</h3>
+              <p>{{n.description}}</p>
+              <nuxt-link :to="'/circle/'+ n.slug" class="news-contents">もっとみる</nuxt-link>
+            </div>           
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
+
 </template>
 
 <script>
+import MyButton from '../../components/Mybutton.vue'
 
 export default {
+  components: { MyButton },
   async asyncData ({ $content, params }) {
     const query = await $content('circle' || 'index').limit(15)
-    const news = await query.fetch()
-    return { news }
+    //const news = await $content('contents' || 'index').where({ tags: 'news' }).fetch(15)
+    const circle = await query.fetch()
+    return { circle }
   }
 }
 </script>
 
 <style>
-.page-head {
-    padding: 10rem 0 5rem 0;
+.circle {
+  display: block;
+  width: 100%;
+  background-image: url("/about/acer.png");
+  background-size: cover;
+  background-position:center center;
 }
-.news-list a{
-    text-decoration: none;
+
+.circle-gradient-filter {
+  padding-top: 60px;
+  padding: 8% 0 6% 0;
+  background: rgba(0, 0, 0, 0.7);
 }
+.circle h2 {
+  font-weight: 600;
+  color: #fff;
+  padding: 1% 0;
+}
+.circle p {
+  color: #fff;
+  padding: 1% 0;
+  letter-spacing: 1px;
+}
+.aboutimg {
+  height: auto;
+  padding: 10% 2% 10% 20%;
+}
+
+/* jikkou */
+.jikkou {
+  background: #FFDDB0;
+  border-radius: 20px;
+  padding: 5%;
+  margin: 5% 0;
+}
+
+/* circle-list */
+.circle-list h2 {
+  text-align: center;
+}
+.circle-list-child {
+  width: 80%;
+  list-style: none outside;
+  -moz-column-count: 2;
+  column-count: 2;
+  margin: 5% 10%;
+  padding: 0;
+}
+.circle-list li {
+  float: left;
+  width: 100%;
+  padding: 3%;
+}
+.list-frame {
+  margin: 0 10%;
+}
+.circle-img-frame {
+  display: inline-block;
+  position: relative;
+  background: #000;
+  border-radius: 10px;
+}
+.circle-img-frame img{
+  width: 30vw;
+  height: 15vw;
+  padding: 4% 2%;
+  object-fit: cover;
+}
+
+
+@media screen and (max-width: 768px) {
+  .circle-gradient-filter {
+    padding: 11% 0 6% 0;
+  }
+  .list-frame {
+    margin: 0;
+  }
+  .circle-img-frame img{
+    width: 30vw;
+    height: 20vw;
+    padding: 4% 2%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .circle-list ul {
+    list-style: none outside;
+    column-count: 1;
+  }
+  .circle-gradient-filter {
+    padding: 20% 0 10% 0;
+  }
+  .circle-img-frame img{
+    width: 80vw;
+    height: 50vw;
+    padding: 4% 2%;
+    object-fit: cover;
+  }
+}
+
 
 </style>

@@ -3,29 +3,15 @@
     <header>
         <div class="container">
             <div class="logo">
-                <Nuxtlink @click="$router.push('/')"  class='logo-name'>OKIU Fes.</Nuxtlink>
+                <nuxt-link to="/"  class='logo-name'>OKIU Fes.</nuxt-link>
             </div>
 
             <div class="nav pc">
-                <Nuxtlink  @click="$router.push('/about')" class="name hover9">イベントについて</Nuxtlink>
-                <Nuxtlink @click="$router.push('/news')"  class="name hover9">お知らせ</Nuxtlink>
+                <nuxt-link  to="/about" class="name hover9">イベントについて</nuxt-link>
+                <Nuxtlink @click="$router.push('/news/')"  class="name hover9">お知らせ</Nuxtlink>
                 <Nuxtlink @click="$router.push('/')"  class="name hover9">感染対策について</Nuxtlink>
             </div>
             <!-- スマホのみ -->
-            <!-- <div class="header-logo-menu sp">
-                <div id="nav-drawer">
-                        <input id="nav-input" type="checkbox" class="nav-unshown">
-                        <label id="nav-open" for="nav-input"><span></span></label>
-                        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-                    <div id="nav-content">
-                        <ul>
-                            <li><Nuxtlink @click="$router.push('/about')"  class="namesp">イベントについて</Nuxtlink></li>
-                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">お知らせ</Nuxtlink></li>
-                            <li><Nuxtlink @click="$router.push('/')"  class="namesp">感染症対策について</Nuxtlink></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
             <div id="app" class="sp">
               <!--ハンバーガーメニューのボタン-->
               <div class="hamburger_btn" v-on:click='ActiveBtn=!ActiveBtn'>
@@ -37,10 +23,10 @@
               <transition name="menu">
                 <div class="menu" v-show="ActiveBtn">
                     <ul>
-                        <li><Nuxtlink @click="$router.push('/')"  class="namesp" v-on:click="ActiveBtn = false">TOP</Nuxtlink></li>
-                        <li><Nuxtlink @click="$router.push('/about')"  class="namesp" v-on:click="ActiveBtn = false">イベントについて</Nuxtlink></li>
-                        <li><Nuxtlink @click="$router.push('/news')"  class="namesp" v-on:click="ActiveBtn = false">お知らせ</Nuxtlink></li>
-                        <li><Nuxtlink @click="$router.push('/')"  class="namesp" v-on:click="ActiveBtn = false">感染症対策について</Nuxtlink></li>
+                        <li><nuxt-link to="/" class="namesp" v-on:click="ActiveBtn = false">TOP</nuxt-link></li>
+                        <li><nuxt-link to="/about"  class="namesp" v-on:click="ActiveBtn = false">イベントについて</nuxt-link></li>
+                        <li><nuxt-link to="/news"  class="namesp" v-on:click="ActiveBtn = false">お知らせ</nuxt-link></li>
+                        <li><nuxt-link to="/"  class="namesp" v-on:click="ActiveBtn = false">感染症対策について</nuxt-link></li>
                     </ul>
                 </div> 
               </transition>

@@ -5,7 +5,7 @@
             <div class="about-gradient-filter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm left">
+                        <div class="col-md left">
                         <h2>このイベントに<br class="sp">ついて</h2>
                         <p>
                             このイベントは、今年度のコロナ禍での様々なイベント中止を受け、<br>
@@ -15,7 +15,7 @@
                             新しい生活様式を模索したいとの考えから企画されました。
                         </p>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-md">
                             <div class="ct-background">
                               <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
                                 <img :src='item1.src' :class="item1.class" :style='item1.style'>
@@ -50,7 +50,9 @@
                         {{n.title}}
                       </div>
                     </nuxt-link>
-                  </div>
+                  </div> 
+                  <MyButton link="/circle">もっとみる</MyButton>
+                  
                 </div>
               </div>
             </div>
@@ -62,19 +64,19 @@
           <div class="container">
             <h2>イベントをオンラインで楽しむ！</h2>
             <div class="row">
-              <div class="col-sm-4">
+              <div class="col-md-4">
                 <div class="sns-youtube">
                   <p class="sns-title">YouTube</p>
                   <p class="sns-text">Liveを見ながらフォローしたり、<br>コメントしたり、自分だけの楽しみ方を</p>
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div class="col-md-4">
                 <div class="sns-twitter">
                   <p class="sns-title">Twitter</p>
                   <p class="sns-text">実行委員公式と繋がって情報ゲット！<br>＃okiufes2020でツイートしよう</p>
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div class="col-md-4">
                 <div class="sns-instagram">
                   <p class="sns-title">Instagram</p>
                   <p class="sns-text">Liveに参加したり、コメントしたり<br>インスタで情報をゲット</p>
@@ -116,14 +118,19 @@
 </template>
 
 <script>
+import MyButton from "~/components/MyButton.vue";
 export default {
+  components: {
+    MyButton
+  },
+
   async asyncData ({ $content, params }) {
     const query = await $content('circle' || 'index').limit(15)
     const circle = await query.fetch()
     return { circle }
   }
+};
 
-}
 </script>
 
 
@@ -213,6 +220,9 @@ export default {
 .circle-gradient2 {
   background: rgba(0, 0, 0, 0.4);
   padding: 5% 0;
+}
+.circle-gradient2 a {
+  margin: 5% auto;
 }
 .circle-row {
   margin: 0 auto;
@@ -321,9 +331,22 @@ export default {
   .circle-gradient2 h2 {
     padding-bottom: 5%;
   }
-.schedule-img {
+  .about-sns {
+    padding:10% 0;
+  }
+  
+  .sns-youtube {
+    margin: 3% auto;
+  }
+  .sns-twitter {
+    margin: 3% auto;
+  }
+  .sns-instagram {
+    margin: 3% auto;
+  }
+  .schedule-img {
     width: 25%;
-}
+  }
   .schedule-child {
     width: 100%;
     list-style: none outside;
@@ -349,20 +372,8 @@ export default {
   .circle-gradient2 {
     padding: 10% 0;
   }
-  .about-sns {
-    padding:10% 0;
-  }
   .about-sns h2 {
     padding-bottom:5%;
-  }
-  .sns-youtube {
-    margin: 3% auto;
-  }
-  .sns-twitter {
-    margin: 3% auto;
-  }
-  .sns-instagram {
-    margin: 3% auto;
   }
   .schedule-child {
     width: 100%;
