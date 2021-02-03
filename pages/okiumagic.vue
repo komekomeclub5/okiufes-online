@@ -46,28 +46,28 @@
                 <h2>沖国実行委員を見てみよう</h2>
                 <div class="row">
                     <div class="col">
-                        <img src="/okiumagic/1.jpg">
+                        <img src="@/assets/img/okiumagic/jikko.jpg">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-7 p2">
-                        <img src="/okiumagic/2.jpg">
+                        <img src="@/assets/img/okiumagic/2.jpg">
                     </div>
                     <div class="col-sm-5 p3">
-                        <img src="/okiumagic/3.jpg">
+                        <img src="@/assets/img/okiumagic/3.jpg">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-5 p3">
-                        <img src="/okiumagic/4.jpg">
+                        <img src="@/assets/img/okiumagic/4.jpg">
                     </div>
                     <div class="col-sm-7 p2">
-                        <img src="/okiumagic/5.jpg">
+                        <img src="@/assets/img/okiumagic/5.jpg">
                     </div>
                 </div>
                 <div class="row bt">
                     <div class="col p4">
-                        <img src="/okiumagic/6.jpg">
+                        <img src="@/assets/img/okiumagic/6.jpg">
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@ export default {
 /* img */
 .magic-bigimg{
     min-height: 60vw;
-    background-image: url("~@/assets/img/jikko.jpg");
+    background-image: url("~@/assets/img/okiumagic/jikko.jpg");
     background-size: cover;
     background-position: center;
     height: auto;
@@ -163,7 +163,7 @@ export default {
 
 /* companion */
 .magic-companion {
-    background-image: url("~@/assets/img/jikko.jpg");
+    background-image: url("~@/assets/img/okiumagic/jikko.jpg");
     background-size: cover;
     background-position: center;
 }

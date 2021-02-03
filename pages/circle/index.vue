@@ -39,7 +39,7 @@
               <Mybutton back_color="#000" fore_color="#fff">もっとみる</Mybutton>
           </div>
           <div class="col-sm-4">
-            <img src="@/assets/img/jikko-group.png" alt="実行委員">
+            <img src="@/assets/img/okiumagic/jikko-group.png" alt="実行委員">
           </div>
         </div>
         
