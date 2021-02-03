@@ -39,7 +39,7 @@
                     大学生活に対しての思いをなくしてしまわない様、<br>
                     新しい生活様式を模索したいとの考えから企画されました。
                 </p>
-                <MyButton link="/about">もっとみる</MyButton>
+                <Mybutton link="/about">もっとみる</Mybutton>
               </div>
               <div class="col-md">
                 <!-- <img class="aboutimg" src="/top/about.png" /> -->
@@ -94,7 +94,7 @@
                 <nuxt-link :to="'/news/'+ n.slug" class="news-contents">{{n.date}}　<br class="sp">{{n.title}}</nuxt-link>
               </div>
             </div>
-            <MyButton link="/news">もっとみる</MyButton>
+            <Mybutton link="/news">もっとみる</Mybutton>
         </div>
       </div>
     </div>
@@ -108,7 +108,7 @@
               <p>沖国大　学生限定</p>
               <h2>イベントに出演して楽しもう</h2>
               <p>皆さんの日頃の取り組みを発表できる特別イベントを企画しました。ページから出演エントリーして今年だけの思い出を作りましょう！</p>
-              <MyButton back_color="#000" fore_color="#fff">出演エントリー</MyButton>
+              <Mybutton back_color="#000" fore_color="#fff">出演エントリー</Mybutton>
             </div>
             <div class="col-md">
               <img src="top/forms.png" alt="GoogleForms Logo">
@@ -125,10 +125,10 @@
 </template>
 
 <script>
-import MyButton from "@/components/MyButton.vue";
+import Mybutton from "@/components/MyButton.vue";
 export default {
   components: {
-    MyButton
+    Mybutton
   },
 
   async asyncData ({ $content, params }) {

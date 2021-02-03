@@ -51,7 +51,7 @@
                       </div>
                     </nuxt-link>
                   </div> 
-                  <MyButton link="/circle">もっとみる</MyButton>
+                  <Mybutton link="/circle">もっとみる</Mybutton>
                   
                 </div>
               </div>
@@ -118,10 +118,10 @@
 </template>
 
 <script>
-import MyButton from "/components/MyButton.vue";
+import Mybutton from "/components/MyButton.vue";
 export default {
   components: {
-    MyButton
+    Mybutton
   },
 
   async asyncData ({ $content, params }) {
