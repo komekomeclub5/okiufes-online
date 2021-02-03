@@ -54,4 +54,10 @@
     padding: 1% 0
 }
 
+@media screen and (max-width: 575px) {
+    .contact {
+        padding: 30% 0;
+    }
+}
+
 </style>

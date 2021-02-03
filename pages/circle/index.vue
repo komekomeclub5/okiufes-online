@@ -36,7 +36,7 @@
               <p>沖国大　学生限定</p>
               <h2>実行委員の紹介</h2>
               <p>実行委員は、大学内で開催される体育祭や学園祭などの企画・運営をしています。多くの人と繋がれるチャンスがここにあります。</p>
-              <Mybutton back_color="#000" fore_color="#fff">もっとみる</Mybutton>
+              <Mybutton to="/okiumagic" back_color="#000" fore_color="#fff">もっとみる</Mybutton>
           </div>
           <div class="col-sm-4">
             <img src="@/assets/img/okiumagic/jikko-group.png" alt="実行委員">
