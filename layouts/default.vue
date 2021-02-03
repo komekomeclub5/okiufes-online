@@ -32,6 +32,12 @@ html {
   box-sizing: border-box;
 }
 
+.container{
+margin-right: auto;
+margin-left: auto;
+max-width: 1140px; 
+}
+
 *,
 *::before,
 *::after {

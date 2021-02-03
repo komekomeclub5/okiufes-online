@@ -180,12 +180,20 @@ ul {
 
 
 /* mobile */ 
+.lg { display: none !important; }
 .pc { display: none !important; }
 .sp { display: block !important; }
 
 
+
  
 @media only screen and (min-width: 768px) {
+.lg { display: none !important; }
+.pc { display: block !important; }
+.sp { display: none !important; }
+}
+@media only screen and (min-width: 1060px) {
+.lg { display: block !important; }
 .pc { display: block !important; }
 .sp { display: none !important; }
 }

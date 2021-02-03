@@ -138,7 +138,7 @@ export default {
 .jikkou {
   background: #FFDDB0;
   border-radius: 20px;
-  padding: 5%;
+  padding: 6%;
   margin: 5% 0;
 }
 .jikkou-text {
@@ -153,11 +153,11 @@ export default {
   text-align: center;
 }
 .circle-list-child {
-  width: 80%;
+  width: 100%;
   list-style: none outside;
   -moz-column-count: 2;
   column-count: 2;
-  margin: 5% 10%;
+  margin: 5% 0;
   padding: 0;
 }
 .circle-list li {
@@ -166,7 +166,15 @@ export default {
   padding: 3%;
 }
 .list-frame {
-  margin: 0 10%;
+  margin: 0 2%;
+}
+.list-frame h3{
+  padding-top:2%;
+}
+.list-frame a{
+  padding: 3% 0;
+  color: #FF6F00;
+  text-decoration-line: none;
 }
 .circle-img-frame {
   display: inline-block;
@@ -175,23 +183,31 @@ export default {
   border-radius: 10px;
 }
 .circle-img-frame img{
-  width: 30vw;
-  height: 15vw;
+  width: 100%;
+  height: 290px;
   padding: 4% 2%;
   object-fit: cover;
 }
 
-
+@media screen and (max-width: 1024px) {
+  .circle-img-frame img{
+    width: 100%;
+    height: 25vw;
+  }
+}
 @media screen and (max-width: 768px) {
   .circle-gradient-filter {
     padding: 11% 0 6% 0;
+  }
+  .circle-background{
+    margin: 5% auto;
   }
   .list-frame {
     margin: 0;
   }
   .circle-img-frame img{
-    width: 30vw;
-    height: 20vw;
+    width: 100%;
+    height: 30vw;
     padding: 4% 2%;
     object-fit: cover;
     
@@ -207,8 +223,8 @@ export default {
     padding: 20% 0 10% 0;
   }
   .circle-img-frame img{
-    width: 80vw;
-    height: 50vw;
+    width: 100%;
+    height: 55vw;
     padding: 4% 2%;
     object-fit: cover;
   }

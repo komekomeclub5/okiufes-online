@@ -59,21 +59,21 @@
       <div class="container">
         <h2>イベントを最大限に楽しもう</h2>
         <div class="row">
-          <div class="col-sm enjoy-box">
+          <div class="col-xs-12 col-sm-6 col-md-4 enjoy-box">
             <h3>SNSで楽しむ</h3>
             <p>
               フォローしたり、コメントしたり、LIVEを見たり自分だけの楽しみ方を見つける。新しい楽しみ方もここで。
             </p>
             <nuxt-link to="/about#sns" class="enjoy-more">もっとみる</nuxt-link>
           </div>
-          <div class="col-sm enjoy-box">
+          <div class="col-xs-12 col-sm-6 col-md-4 enjoy-box">
             <h3>団体を知る</h3>
             <p>
               あなたが気になる出演団体について知ることができればきっと楽しさ倍増！？お気に入りの団体も見つかるかも
             </p>
             <nuxt-link to="/circle" class="enjoy-more">もっとみる</nuxt-link>
           </div>
-          <div class="col-sm enjoy-box">
+          <div class="col-xs-12 col-sm-6 col-md-4 enjoy-box">
             <h3>感染対策の徹底</h3>
             <p>
               多くの人に楽しんでいただくために新しい生活様式を取り入れ、感染対策にも取り組んでいます。
@@ -198,6 +198,7 @@ export default {
   margin: auto;
   height: 30rem;
   width: 40rem;
+  margin-right: 2%;
   /* background: rgba(255, 255, 255, 0.5); */
 }
 .n {
@@ -222,6 +223,7 @@ export default {
   margin: auto;
   height: 30rem;
   width: 40rem;
+  margin-right: 2%;
   /* background: rgba(255, 255, 255, 0.5); */
 }
 .n1 {
@@ -340,15 +342,17 @@ export default {
   padding-bottom: 3%;
 }
 .top-appearance img {
-  margin: 0 auto;
+  margin: 0 2% 0 auto;
 }
 .ap-gradient {
   padding: 5% 0;
   background: linear-gradient(90deg, rgba(255, 0, 94, 0.3) 0%, rgba(255, 145, 0, 0.3) 100%);
 }
 
+
+
 /* tablet */
-@media screen and (max-width:768px) {
+@media screen and (max-width:770px) {
   .top-background {
     height: 15em;
     width: 20em;

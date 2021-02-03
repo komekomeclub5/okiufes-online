@@ -35,8 +35,8 @@
                     
                 <div class="col-sm">
                     <div class="snslogo">
-                        <img src="sns/twitter.jpg" alt="twitter-logo">
-                        <img src="sns/instagram.png" alt="instagram-logo">
+                        <img src="@/assets/img/sns/twitter.jpg" alt="twitter-logo">
+                        <img src="@/assets/img/sns/instagram.png" alt="instagram-logo">
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@
                         </p>
                         </div>
                         <div class="col-md">
-                            <div class="ct-background">
+                            <div class="about-background">
                               <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
                                 <img :src='item1.src' :class="item1.class" :style='item1.style'>
                               </div>
@@ -64,22 +64,22 @@
           <div class="container">
             <h2>イベントをオンラインで楽しむ！</h2>
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="sns-youtube">
                   <p class="sns-title">YouTube</p>
-                  <p class="sns-text">Liveを見ながらフォローしたり、<br>コメントしたり、自分だけの楽しみ方を</p>
+                  <p class="sns-text">Liveを見ながらフォローしたり、<br class="lg">コメントしたり、自分だけの楽しみ方を</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="sns-twitter">
                   <p class="sns-title">Twitter</p>
-                  <p class="sns-text">実行委員公式と繋がって情報ゲット！<br>＃okiufes2020でツイートしよう</p>
+                  <p class="sns-text">実行委員公式と繋がって情報ゲット！<br class="lg">＃okiufes2020でツイートしよう</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="sns-instagram">
                   <p class="sns-title">Instagram</p>
-                  <p class="sns-text">Liveに参加したり、コメントしたり<br>インスタで情報をゲット</p>
+                  <p class="sns-text">Liveに参加したり、コメントしたり、<br class="lg">インスタで情報をゲット</p>
                 </div>
               </div>
             </div>
@@ -169,11 +169,12 @@ export default {
 }
 
 /* chatan img animation */
-.ct-background {
+.about-background {
   position: relative;
   margin: auto;
   height: 30rem;
   width: 40rem;
+  margin-right: 2%;
   /* background: rgba(255, 255, 255, 0.5); */
 }
 .n1 {
@@ -338,10 +339,11 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .ct-background {
+@media screen and (max-width: 770px) {
+  .about-background {
     height: 15em;
     width: 20em;
+    margin: 5% auto;
   }
   .about-gradient-filter {
     padding: 11% 0 6% 0;
@@ -363,15 +365,15 @@ export default {
     margin: 3% auto;
   }
   .schedule-img {
-    width: 16vw;
-    height: 16vw;
+    width: 20vw;
+    height: 20vw;
   }
   .schedule-child {
     width: 100%;
     list-style: none outside;
     column-count: 1;
     margin: 0;
-    padding: 0 0 0 5px;
+    padding: 0 0 0 5%;
   }
   .schedule-child li {
     padding: 3% 1%;
