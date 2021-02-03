@@ -1,6 +1,6 @@
 ---
 title: Ruel
 description: たぶん大物
-img: /circle/ruel.png
+img: /circle/ruel.jpg
 
 ---

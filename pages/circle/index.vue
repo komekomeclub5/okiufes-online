@@ -16,8 +16,8 @@
                   </p>
                   </div>
                   <div class="col-md">
-                      <div class="ct-background">
-                        <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
+                      <div class="circle-background">
+                        <div v-for="(item1, index1) in $store.getters['circleimgmodule/circles']" :key="index1">
                           <img :src='item1.src' :class="item1.class" :style='item1.style'>
                         </div>
                       </div>
@@ -31,11 +31,18 @@
     <div class="container">
       <!-- jikkou -->
       <div class="jikkou">
+        <div class="row">
+          <div class="col-sm-8 jikkou-text" >
+              <p>沖国大　学生限定</p>
+              <h2>実行委員の紹介</h2>
+              <p>実行委員は、大学内で開催される体育祭や学園祭などの企画・運営をしています。多くの人と繋がれるチャンスがここにあります。</p>
+              <MyButton back_color="#000" fore_color="#fff">もっとみる</MyButton>
+          </div>
+          <div class="col-sm-4">
+            <img src="jikko-group.png" alt="実行委員">
+          </div>
+        </div>
         
-          <p>沖国大　学生限定</p>
-          <h2>実行委員の紹介</h2>
-          <p>実行委員は、大学内で開催される体育祭や学園祭などの企画・運営をしています。多くの人と繋がれるチャンスがここにあります。</p>
-          <MyButton back_color="#000" fore_color="#fff">もっとみる</MyButton>
         
       </div>
     
@@ -103,6 +110,29 @@ export default {
   height: auto;
   padding: 10% 2% 10% 20%;
 }
+.circle-background {
+  position: relative;
+  margin: auto;
+  height: 30rem;
+  width: 30rem;
+}
+
+.n2 {
+  opacity: 0;
+  border-radius: 12px; animation-name: fadein; animation-duration: 2s;
+  animation-fill-mode: forwards; /*これで値を保持*/
+  will-change: transform;
+}
+@keyframes fadein {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
 
 /* jikkou */
 .jikkou {
@@ -110,6 +140,12 @@ export default {
   border-radius: 20px;
   padding: 5%;
   margin: 5% 0;
+}
+.jikkou-text {
+  margin: auto 0;
+}
+.jikkou img {
+  padding: 10%;
 }
 
 /* circle-list */
@@ -158,6 +194,7 @@ export default {
     height: 20vw;
     padding: 4% 2%;
     object-fit: cover;
+    
   }
 }
 

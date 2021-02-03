@@ -308,16 +308,34 @@ export default {
   padding:3%;
 }
 .schedule-img{
-  width: 21%;
-  height: auto;
+  width: 6em;
+  height: 6em;
   float: left;
   margin: 0 5% 0 0;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.2);
 }
 .schedule-text {
   width: 70%;
   float: right;
+}
+
+@media screen and (max-width: 1200px) {
+  .schedule-img{
+    width: 5em;
+    height: 5em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .schedule-child {
+    width: 100%;
+    list-style: none outside;
+    column-count: 2;
+    margin: 5% 0;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -345,17 +363,21 @@ export default {
     margin: 3% auto;
   }
   .schedule-img {
-    width: 25%;
+    width: 16vw;
+    height: 16vw;
   }
   .schedule-child {
     width: 100%;
     list-style: none outside;
-    column-count: 2;
+    column-count: 1;
     margin: 0;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 5px;
   }
   .schedule-child li {
     padding: 3% 1%;
+  }
+  .schedule-img {
+    margin: 0 5% 0 0;
   }
 }
 
@@ -375,6 +397,10 @@ export default {
   .about-sns h2 {
     padding-bottom:5%;
   }
+  .schedule-img {
+    width: 20vw;
+    height: 20vw;
+  }
   .schedule-child {
     width: 100%;
     list-style: none outside;
@@ -387,6 +413,11 @@ export default {
   }
   .schedule-img {
     margin: 3% 5% 3% 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .schedule-img {
+    margin: 0 5% 0 0;
   }
 }
 
