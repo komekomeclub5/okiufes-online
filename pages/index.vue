@@ -64,7 +64,7 @@
             <p>
               フォローしたり、コメントしたり、LIVEを見たり自分だけの楽しみ方を見つける。新しい楽しみ方もここで。
             </p>
-            <nuxt-link to="/about#ab-sns" class="enjoy-more">もっとみる</nuxt-link>
+            <nuxt-link to="/about#sns" class="enjoy-more">もっとみる</nuxt-link>
           </div>
           <div class="col-sm enjoy-box">
             <h3>団体を知る</h3>
@@ -280,7 +280,8 @@ export default {
   padding: 5% 0;
 }
 .enjoy-box {
-  padding: 1.5% 0;
+  padding: 1.5%;
+  position: relative;
 }
 .top-enjoy h2 {
   padding-bottom: 3%;
@@ -292,7 +293,9 @@ export default {
   padding: 2% 0;
 }
 .enjoy-more {
-  padding: 4% 0;
+  position: absolute;
+  bottom: 0;
+  
   color: #FF6F00;
 }
 
@@ -380,6 +383,9 @@ export default {
   }
   .top-enjoy {
     padding: 10% 0;
+  }
+  .enjoy-box {
+    padding: 1.5% 0 10% 0;
   }
   .ct-background {
     margin: 15% auto;

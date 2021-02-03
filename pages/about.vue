@@ -60,7 +60,7 @@
         </div>
 
         <!-- SNS -->
-        <div class="about-sns" id="ab-sns">
+        <div class="about-sns" id="sns">
           <div class="container">
             <h2>イベントをオンラインで楽しむ！</h2>
             <div class="row">
