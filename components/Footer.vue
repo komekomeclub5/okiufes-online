@@ -10,26 +10,26 @@
                 </div>
                 <div class="col-sm">
                     <dl class="mid-list">
-                        <dt>私たちについて</dt>
-                        <dd>実行委員情報</dd>
-                        <dd>実行委員募集</dd>
-                        <dd>お問い合わせ</dd>
+                        <dt>実行委員</dt>
+                        <dd><nuxt-link  to="/okiumagic" class="f-nav-list">実行委員について</nuxt-link></dd>
+                        <dd><nuxt-link  to="/okiumagic#companion" class="f-nav-list">実行委員募集</nuxt-link></dd>
+                        <dd><nuxt-link  to="/contact" class="f-nav-list">お問合せ</nuxt-link></dd>
                     </dl>
                 </div>
                 <div class="col-sm">
                     <dl class="mid-list">
-                        <dt>イベントについて</dt>
-                        <dd>出演団体</dd>
-                        <dd>感染対策</dd>
-                        <dd>お知らせ</dd>
-                        <dd>広告</dd>
+                        <dt>イベント</dt>
+                        <dd><nuxt-link  to="/about" class="f-nav-list">イベントについて</nuxt-link></dd>
+                        <dd><nuxt-link  to="/" class="f-nav-list">感染症対策について</nuxt-link></dd>
+                        <dd><nuxt-link  to="/news" class="f-nav-list">お知らせ</nuxt-link></dd>
+                        <dd><nuxt-link  to="/#Appearance" class="f-nav-list">出演エントリー</nuxt-link></dd>
+                        <dd><nuxt-link  to="/" class="f-nav-list">広告</nuxt-link></dd>
                     </dl>
                 </div>    
                 <div class="col-sm">
                     <dl class="mid-list">
                         <dt>その他</dt>
-                        <dd>実行委員上層メンバー</dd>
-                        <dd>沖国際実行委員2020</dd>
+                        <dd><a href="https://www.okiu.ac.jp/" class="f-nav-list">沖縄国際大学HP</a></dd>
                     </dl>
                 </div>
                     
@@ -98,6 +98,11 @@ footer {
     text-align: left;
     margin-inline-start: 0px;
     padding: 2px 0;
+    
+}
+.f-nav-list {
+    text-decoration-line: none;
+    color: #fff;
 }
 
 .footer-bottom {

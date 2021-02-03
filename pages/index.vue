@@ -100,7 +100,7 @@
     </div>
 
     <!-- Appearance -->
-    <div class="top-appearance">
+    <div class="top-appearance" id="Appearance">
       <div class="ap-gradient">
         <div class="container">
           <div class="row">
