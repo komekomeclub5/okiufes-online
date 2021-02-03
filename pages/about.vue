@@ -60,7 +60,7 @@
         </div>
 
         <!-- SNS -->
-        <div class="about-sns">
+        <div class="about-sns" id="ab-sns">
           <div class="container">
             <h2>イベントをオンラインで楽しむ！</h2>
             <div class="row">
@@ -207,7 +207,7 @@ export default {
 
 /* Circle */
 .about-circle {
-  background-image: url("/about/acer.png");
+  background-image: url("~@/assets/img/about/acer.png");
   text-align: center;
   color: #fff;
 }
@@ -285,7 +285,7 @@ export default {
 
 /* Schedule */
 .about-schedule {
-  background-image: url("/schedule/background.jpg");
+  background-image: url("~@/assets/img/about/background.jpg");
   color: #fff;
 }
 .about-schedule h2 {

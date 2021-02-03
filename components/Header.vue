@@ -8,8 +8,8 @@
 
             <div class="nav pc">
                 <nuxt-link  to="/about" class="name hover9">イベントについて</nuxt-link>
-                <Nuxtlink @click="$router.push('/news/')"  class="name hover9">お知らせ</Nuxtlink>
-                <Nuxtlink @click="$router.push('/')"  class="name hover9">感染対策について</Nuxtlink>
+                <nuxt-link  to="/news" class="name hover9">お知らせ</nuxt-link>
+                <nuxt-link  to="/" class="name hover9">感染症対策について</nuxt-link>
             </div>
             <!-- スマホのみ -->
             <div id="app" class="sp">
@@ -23,10 +23,10 @@
               <transition name="menu">
                 <div class="menu" v-show="ActiveBtn">
                     <ul>
-                        <li><nuxt-link to="/" class="namesp" v-on:click="ActiveBtn = false">TOP</nuxt-link></li>
-                        <li><nuxt-link to="/about"  class="namesp" v-on:click="ActiveBtn = false">イベントについて</nuxt-link></li>
-                        <li><nuxt-link to="/news"  class="namesp" v-on:click="ActiveBtn = false">お知らせ</nuxt-link></li>
-                        <li><nuxt-link to="/"  class="namesp" v-on:click="ActiveBtn = false">感染症対策について</nuxt-link></li>
+                        <li v-on:click="ActiveBtn = false"><nuxt-link to="/" class="namesp">TOP</nuxt-link></li>
+                        <li v-on:click="ActiveBtn = false"><nuxt-link to="/about"  class="namesp">イベントについて</nuxt-link></li>
+                        <li v-on:click="ActiveBtn = false"><nuxt-link to="/news"  class="namesp">お知らせ</nuxt-link></li>
+                        <li v-on:click="ActiveBtn = false"><nuxt-link to="/"  class="namesp">感染症対策について</nuxt-link></li>
                     </ul>
                 </div> 
               </transition>

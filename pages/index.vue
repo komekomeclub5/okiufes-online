@@ -64,14 +64,14 @@
             <p>
               フォローしたり、コメントしたり、LIVEを見たり自分だけの楽しみ方を見つける。新しい楽しみ方もここで。
             </p>
-            <nuxt-link to="/" class="enjoy-more">もっとみる</nuxt-link>
+            <nuxt-link to="/about#ab-sns" class="enjoy-more">もっとみる</nuxt-link>
           </div>
           <div class="col-sm enjoy-box">
             <h3>団体を知る</h3>
             <p>
               あなたが気になる出演団体について知ることができればきっと楽しさ倍増！？お気に入りの団体も見つかるかも
             </p>
-            <nuxt-link to="/" class="enjoy-more">もっとみる</nuxt-link>
+            <nuxt-link to="/circle" class="enjoy-more">もっとみる</nuxt-link>
           </div>
           <div class="col-sm enjoy-box">
             <h3>感染対策の徹底</h3>

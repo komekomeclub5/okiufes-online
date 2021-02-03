@@ -39,7 +39,7 @@
               <Mybutton back_color="#000" fore_color="#fff">もっとみる</Mybutton>
           </div>
           <div class="col-sm-4">
-            <img src="jikko-group.png" alt="実行委員">
+            <img src="@/assets/img/jikko-group.png" alt="実行委員">
           </div>
         </div>
         
@@ -86,7 +86,7 @@ export default {
 .circle {
   display: block;
   width: 100%;
-  background-image: url("/about/acer.png");
+  background-image: url("~@/assets/img/about/acer.png");
   background-size: cover;
   background-position:center center;
 }
