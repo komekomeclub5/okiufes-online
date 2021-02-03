@@ -118,7 +118,7 @@
 </template>
 
 <script>
-import Mybutton from "/components/MyButton.vue";
+import Mybutton from "../components/Mybutton.vue";
 export default {
   components: {
     Mybutton
