@@ -112,7 +112,7 @@ export default {
 }
 .circle-background {
   position: relative;
-  margin: auto;
+  margin: auto 2% auto auto;
   height: 30rem;
   width: 30rem;
 }

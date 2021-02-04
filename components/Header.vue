@@ -88,8 +88,6 @@ ul {
 /* ハンバーガー */
 
 
-
-
 /*ボタン*/
 .hamburger_btn {
   position: fixed; /*常に最上部に表示したいので固定*/
@@ -140,7 +138,7 @@ ul {
 
 /*サイドバー*/
 .menu-enter-active, .menu-leave-active {
-  transition: opacity 0.2s;
+  transition: opacity 0.15s;
 }
 .menu-enter, .menu-leave-to {
   opacity: 0;
@@ -153,7 +151,30 @@ ul {
   list-style: none;
   line-height: 1;
   padding: 1rem;
+
+  transform: translateX(-100%);
+  animation-name: fadeIn;
+  animation-duration: 0.1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
+  li:nth-child(1){ animation-delay: .2s; }
+  li:nth-child(2){ animation-delay: .23s; }
+  li:nth-child(3){ animation-delay: .26s; }
+  li:nth-child(4){ animation-delay: .29s; }
+  li:nth-child(5){ animation-delay: .32s; }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(30%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
 .menu {
     background-color:rgba(0,0,0,0.95);
     z-index: 30;
@@ -175,6 +196,8 @@ ul {
   margin: 1rem;
   padding: 0;
 }
+
+
 
 
 

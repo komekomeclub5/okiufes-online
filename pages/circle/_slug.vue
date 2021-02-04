@@ -6,11 +6,7 @@
             <p>団体紹介</p>
             <h2>{{circle.title}}</h2>
         </div>
-        <dl>
-            <dt>date</dt>
-            <dd>{{circle.date}}</dd>
-        </dl>
-        <div><img :src="circle.image" /></div>
+        <div class="page-img"><img :src="circle.img" /></div>
         <div v-for="tag in circle.tags" :key="tag">{{tag}}</div>
 
         <nuxt-content :document="circle" />
@@ -30,7 +26,11 @@ export default {
 
 <style>
 .page-head {
-    padding: 10rem 0 5rem 0;
+    padding: 10rem 0 3rem 0;
+}
+.page-img img{
+    width: 80%;
+    margin: 0 auto;
 }
 .nuxt-content {
     padding: 5% 0;

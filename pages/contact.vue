@@ -10,6 +10,26 @@
                 </p>
             </div>
         </div>
+
+        <!-- photo -->
+        <div class="contact-photo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 p3">
+                        <img src="@/assets/img/contact/1.jpg">
+                    </div>
+                    <div class="col-sm-7 p2">
+                        <img src="@/assets/img/contact/2.jpg">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col p4">
+                        <img src="@/assets/img/okiumagic/jikko.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- number -->
         <div class="contact-number">
             <div class="container">
@@ -40,9 +60,16 @@
     padding: 1% 0;
 }
 
+/* photo */
+.contact-photo img {
+    width: 100vw;
+    border-radius: 3em;
+    margin: 10px 0;
+}
+
 /* number */
 .contact-number {
-    padding: 5% 0;
+    padding: 15% 0;
     text-align: center;
 }
 .contact-number h2 {
