@@ -56,7 +56,6 @@ header {
     z-index: 10;
     background: rgba(0,0,0,0.4);
     color: #fff;
-
 }
 
 .logo {
@@ -69,17 +68,19 @@ header {
 .logo-name {
     font-size: 2rem;
     text-decoration: none;
-    cursor: pointer
+    cursor: pointer;
+    color: #fff;
 }
 
 .name {
     margin: 0 10px;
     text-decoration: none;
     font-size: 1.6rem;
-    cursor: pointer
+    cursor: pointer;
+    color: #fff;
 }
 
-header a:visited {color: inherit;}
+
 
 ul {
     list-style: none;
@@ -167,7 +168,7 @@ ul {
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateX(30%);
+        transform: translateX(25%);
     }
     100% {
         opacity: 1;
