@@ -28,6 +28,7 @@
                         <li v-on:click="ActiveBtn = false"><nuxt-link to="/news"  class="namesp">お知らせ</nuxt-link></li>
                         <li v-on:click="ActiveBtn = false"><nuxt-link to="/"  class="namesp">感染症対策について</nuxt-link></li>
                     </ul>
+                    <p class="menu-bottom">SpecialThanks / Kota Chinen</p>
                 </div> 
               </transition>
             </div>
@@ -79,7 +80,6 @@ header {
     cursor: pointer;
     color: #fff;
 }
-
 
 
 ul {
@@ -197,6 +197,13 @@ ul {
   margin: 1rem;
   padding: 0;
 }
+.menu-bottom {
+  position: absolute;
+  padding: 0 2rem;
+  bottom: 5%;
+  color: #919496;
+}
+
 
 
 

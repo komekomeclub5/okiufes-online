@@ -40,9 +40,16 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>©OKIU FEST 2021</p>
+            <div class="row">
+                <div class="footer-bottom1 col-sm">
+                    <p>Design / Nagi Ishikura <br>Develop / Kei Yoneda</p>
+                </div>
+                <div class="footer-bottom2 col-sm">
+                    <p>©OKIU FEST 2021</p>
+                </div>
             </div>
+            
+            
         </div>
 
         
@@ -105,7 +112,13 @@ footer {
     color: #fff;
 }
 
-.footer-bottom {
+.footer-bottom1 {
+    padding: 10% 0 0 0;
+    text-align: left;
+    color:  #919496;
+}
+
+.footer-bottom2 {
     padding: 10% 0 0 0;
     text-align: right;
 }
