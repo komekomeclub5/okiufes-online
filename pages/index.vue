@@ -203,14 +203,14 @@ export default {
 }
 .n {
   opacity: 0;
-  border-radius: 12px; animation-name: fadein; animation-duration: 2s;
+  border-radius: 12px; animation-name: fadein; animation-duration: 1s;
   animation-fill-mode: forwards; /*これで値を保持*/
   will-change: transform;
 }
 @keyframes fadein {
   from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(10px);
   }
   to {
       opacity: 1;

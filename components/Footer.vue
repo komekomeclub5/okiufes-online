@@ -45,7 +45,7 @@
                     <p>Design / Nagi Ishikura <br>Develop / Kei Yoneda</p>
                 </div>
                 <div class="footer-bottom2 col-sm">
-                    <p>©OKIU FEST 2021</p>
+                    <p><br>©OKIU FEST 2021</p>
                 </div>
             </div>
             
