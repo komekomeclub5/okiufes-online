@@ -119,7 +119,7 @@ export default {
 
 .n2 {
   opacity: 0;
-  border-radius: 12px; animation-name: fadein; animation-duration: 2s;
+  border-radius: 12px; animation-name: fadein; animation-duration: 1s;
   animation-fill-mode: forwards; /*これで値を保持*/
   will-change: transform;
 }

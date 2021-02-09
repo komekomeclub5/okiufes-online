@@ -179,7 +179,7 @@ export default {
 }
 .n1 {
   opacity: 0;
-  border-radius: 12px; animation-name: zoom; animation-duration: 2s;
+  border-radius: 12px; animation-name: zoom; animation-duration: 1s;
   animation-fill-mode: forwards; /*これで値を保持*/
   will-change: transform;
 }
