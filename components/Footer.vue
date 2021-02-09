@@ -142,6 +142,9 @@ footer {
         border-radius: 50%;
         object-fit: cover;
     }
+    .mid-list dd {
+    padding: 3px 0 15px;
+    }
 }
 
 
