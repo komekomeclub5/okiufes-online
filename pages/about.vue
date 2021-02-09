@@ -18,7 +18,7 @@
                         <div class="col-md">
                             <div class="about-background">
                               <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
-                                <img :src='item1.src' :class="item1.class" :style='item1.style'>
+                                <img :src='item1.src' :class="item1.class" :style='item1.style' alt="about-image">
                               </div>
                             </div>
                         </div>

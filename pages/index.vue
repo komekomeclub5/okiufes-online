@@ -15,7 +15,7 @@
       
               <div class="top-background">
                 <div v-for="(item, index) in $store.getters['imgmodule/itemsList']" :key="index">
-                  <img :src='item.src' :class="item.class" :style='item.style'>
+                  <img :src='item.src' :class="item.class" :style='item.style' alt="top-image">
                 </div>
                 
               </div>
@@ -45,7 +45,7 @@
                 <!-- <img class="aboutimg" src="/top/about.png" /> -->
                 <div class="ct-background">
                   <div v-for="(item1, index1) in $store.getters['img2module/ctList']" :key="index1">
-                    <img :src='item1.src' :class="item1.class" :style='item1.style'>
+                    <img :src='item1.src' :class="item1.class" :style='item1.style' alt="about-image">
                   </div>
                 </div>
               </div>

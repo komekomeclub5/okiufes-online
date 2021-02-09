@@ -18,7 +18,7 @@
                   <div class="col-md">
                       <div class="circle-background">
                         <div v-for="(item1, index1) in $store.getters['circleimgmodule/circles']" :key="index1">
-                          <img :src='item1.src' :class="item1.class" :style='item1.style'>
+                          <img :src='item1.src' :class="item1.class" :style='item1.style' alt="circle-image">
                         </div>
                       </div>
                   </div>
